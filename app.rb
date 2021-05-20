@@ -10,4 +10,14 @@ class DailyDiary < Sinatra::Base
     'Daily Diary'
   end
 
+  get '/diary/new' do
+    erb(:'diary/new')
+  end
+
+  post '/diary' do
+    @diary = []
+    @diary << params[:entry]
+    'Entry stored!'
+  end
+
 end
